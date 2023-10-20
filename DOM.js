@@ -12,8 +12,4 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   DOMSelectors.h2s.forEach((el) => {
     el.textContent = DOMSelectors.firstName.value;
   });
-  console.log(DOMSelectors.lastName.value);
-  DOMSelectors.h3s.forEach((el) => {
-    el.textContent = DOMSelectors.lastName.value
-  });
 });
