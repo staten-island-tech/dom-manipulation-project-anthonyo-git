@@ -7,19 +7,22 @@ const DOMSelectors = {
   imgs: document.querySelectorAll("img")
 };
 
-DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
+function object()
+  let card = {
+    Header: DOMSelectors.Header.value,
+    Text: DOMSelectors.Text.value,
+    image: DOMSelectors.Image.value
+  };
 
-let card = {
-  Header: DOMSelectors.Header.value,
-  Text: DOMSelectors.Text.value,
-  image: DOMSelectors.Image.value
-};
-
+function create()
   let h2 = document.createElement("h2");
   let img = document.createElement("img");
 
-}
+function cardText()
+  h2.textContent === DOMSelectors.Text.value
+  img.imageContent === DOMSelectors.Image.value
+
+
 
 /*
   console.log(DOMSelectors.firstName.value);
@@ -30,3 +33,11 @@ let card = {
 });
  */
 
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log(DOMSelectors.Text.value)
+  object()
+  create()
+  cardText()
+})
