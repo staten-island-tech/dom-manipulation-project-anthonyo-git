@@ -8,21 +8,22 @@ const DOMSelectors = {
 };
 
 function object()
-  let card = {
+  const card = {
     Header: DOMSelectors.Header.value,
     Text: DOMSelectors.Text.value,
     image: DOMSelectors.Image.value
   };
 
 function create()
-  let h2 = document.createElement("h2");
-  let img = document.createElement("img");
+  h2 = document.createElement("h2");
+  img = document.createElement("img");
+  h2.textContent = card.Text;
+  img.imageContent = card.image;
 
-function cardText()
-  h2.textContent === DOMSelectors.Text.value
-  img.imageContent === DOMSelectors.Image.value
+document.querySelector(".flexbox-container").insertAdjacentElement(
+  "afterbegin"
 
-
+)
 
 /*
   console.log(DOMSelectors.firstName.value);
@@ -36,8 +37,6 @@ function cardText()
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log(DOMSelectors.Text.value)
   object()
   create()
-  cardText()
 })
