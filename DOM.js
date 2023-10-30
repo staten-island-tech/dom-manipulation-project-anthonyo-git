@@ -18,13 +18,18 @@ function create()
   h2 = document.createElement("h2");
   img = document.createElement("img");
   h2.textContent = card.Text;
-  img.imageContent = card.image;
+  img.src = card.image;
 
-document.querySelector(".flexbox-container").insertAdjacentElement(
-  "afterbegin"
-
-)
-
+ // this function will cause new HTML to be added when the input button is clicked.
+  
+function insert()
+  document.querySelector(".Flexbox-container").insertAdjacentHTML(
+    "afterend",
+    
+    `<h2>${DOMSelectors.Header.value}</h2>
+    <p>${DOMSelectors.Text.value}<p>
+    <img src="${DOMSelectors.Image.value}" </img>`
+  );
 /*
   console.log(DOMSelectors.firstName.value);
   console.log(DOMSelectors.Image.value);
@@ -39,4 +44,5 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
   object()
   create()
+  insert()
 })
