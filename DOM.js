@@ -16,6 +16,7 @@ function object()
 
 function create()
   h2 = document.createElement("h2");
+  p = document.createElement("texts")
   img = document.createElement("img");
   h2.textContent = card.Text;
   img.src = card.image;
@@ -26,9 +27,9 @@ function insert()
   document.querySelector(".Flexbox-container").insertAdjacentHTML(
     "afterend",
     
-    `<h2>${DOMSelectors.Header.value}</h2>
-    <p>${DOMSelectors.Text.value}<p>
-    <img src="${DOMSelectors.Image.value}" </img>`
+    `<h2>${h2}</h2>
+    <p>${card.Text}<p>
+    <img src="${card.image}" </img>`
   );
 /*
   console.log(DOMSelectors.firstName.value);
