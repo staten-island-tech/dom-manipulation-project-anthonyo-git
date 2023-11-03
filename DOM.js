@@ -7,30 +7,25 @@ const DOMSelectors = {
   imgs: document.querySelectorAll("img")
 };
 
-function object()
+function object() {
   const card = {
     Header: DOMSelectors.Header.value,
     Text: DOMSelectors.Text.value,
-    image: DOMSelectors.Image.value
+    Image: DOMSelectors.Image.value
   };
+  return object
+};
 
-function create()
-  h2 = document.createElement("h2");
-  p = document.createElement("texts")
-  img = document.createElement("img");
-  h2.textContent = card.Text;
-  img.src = card.image;
 
  // this function will cause new HTML to be added when the input button is clicked.
   
-function insert()
+function insert(card)
   document.querySelector(".Flexbox-container").insertAdjacentHTML(
     "afterend",
-    
     `<h2>${h2}</h2>
     <p>${card.Text}<p>
-    <img src="${card.image}" </img>`
-  );
+    <img src="${card.Image}" </img>`
+);
 /*
   console.log(DOMSelectors.firstName.value);
   console.log(DOMSelectors.Image.value);
@@ -43,7 +38,6 @@ function insert()
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
-  object()
-  create()
-  insert()
+  const card = object
+  insert(card)
 })
