@@ -1,5 +1,5 @@
 const DOMSelectors = {
-  form: document.querySelector("form"),
+  form: document.querySelector("#form"),
   Header: document.querySelector(".head"),
   Text: document.querySelector(".texts"),
   Image: document.querySelector(".image"),
@@ -7,31 +7,26 @@ const DOMSelectors = {
   imgs: document.querySelectorAll("img")
 };
 
-function object()
+function object() {
   const card = {
     Header: DOMSelectors.Header.value,
     Text: DOMSelectors.Text.value,
-    image: DOMSelectors.Image.value
-  };
-
-function create()
-  h2 = document.createElement("h2");
-  p = document.createElement("texts")
-  img = document.createElement("img");
-  h2.textContent = card.Text;
-  img.src = card.image;
-
- // this function will cause new HTML to be added when the input button is clicked.
+    Image: DOMSelectors.Image.value
+  } 
+  return card;
+};
   
-function insert()
+function insert(card) {
   document.querySelector(".Flexbox-container").insertAdjacentHTML(
-    "afterend",
-    
-    `<h2>${h2}</h2>
-    <p>${card.Text}<p>
-    <img src="${card.image}" </img>`
+    "beforeend", 
+    `<h2>${card.Header}</h2
+    <p>${card.Text}</p>
+    <img src="${card.Image}">`
   );
+}
+   
 /*
+
   console.log(DOMSelectors.firstName.value);
   console.log(DOMSelectors.Image.value);
   DOMSelectors.h2s.forEach((el) => {
@@ -43,7 +38,6 @@ function insert()
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
-  object()
-  create()
-  insert()
-})
+  const card = object();
+  insert(card);
+});;
