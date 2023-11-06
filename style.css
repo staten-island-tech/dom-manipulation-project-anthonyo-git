@@ -1,4 +1,4 @@
-.flex-container {
+.Flexbox-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -7,6 +7,7 @@
   }
   
   .cell {
+    position: relative;
     background-image: linear-gradient(#ffffff, #999999);
     width: 400px;
     margin: 10px;
@@ -14,17 +15,21 @@
     transition: 0.5s linear;
   }
   
-  .flex-container img {
+  .Flexbox-container img {
     height: 33vh;
     width: 250px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    filter: grayscale(40%);
   }
   
-  .flex-container p {
+  .Flexbox-container p {
     text-align: center;
   }
-  
 
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+  }

@@ -7,7 +7,7 @@ const DOMSelectors = {
   imgs: document.querySelectorAll("img")
 };
 
-function object() {
+function creatcard() {
   const card = {
     Header: DOMSelectors.Header.value,
     Text: DOMSelectors.Text.value,
@@ -19,11 +19,21 @@ function object() {
 function insert(card) {
   document.querySelector(".Flexbox-container").insertAdjacentHTML(
     "beforeend", 
-    `<h2>${card.Header}</h2
-    <p>${card.Text}</p>
-    <img src="${card.Image}">`
+    `<div class="cell">
+        <div class="text-container">
+          <h2>${card.Header}</h2>
+          <p>${card.Text}</p>
+        </div>
+        <img src="${card.Image}">
+        <button class="remove-button">Remove</button>
+      </div>`
   );
-}
+
+    const newCard = document.querySelector(".Flexbox-container").lastElementChild;
+  newCard.querySelector(".remove-button").addEventListener("click", function() {
+    newCard.remove();
+  });
+ }
    
 /*
 
@@ -38,6 +48,7 @@ function insert(card) {
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const card = object();
+  const card = creatcard();
   insert(card);
 });;
+
